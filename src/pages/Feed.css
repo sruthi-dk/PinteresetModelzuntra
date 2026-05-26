@@ -1,0 +1,2 @@
+.masonry-grid { display: flex; gap: 16px; }
+.masonry-col  { display: flex; flex-direction: column; gap: 16px; }
