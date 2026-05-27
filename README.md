@@ -1,46 +1,67 @@
+The Flow I Created:
+pinterest-clone
+├── backend
+│   ├── middleware
+│   │   └── auth.js          
+│   ├── models
+│   │   ├── User.js          
+│   │   └── Post.js          
+│   ├── routes
+│   │   ├── auth.js         
+│   │   └── posts.js         
+│   ├── uploads           
+│   ├── .env                 
+│   └── server.js            
+└── frontend
+    └── src
+        ├── api.js            
+        ├── App.js            
+        ├── components
+        │   ├── Navbar.js     
+        │   ├── PostCard.js  
+        │   └── UploadModal.js
+        └── pages
+            ├── Login.js     
+            ├── Register.js   
+            ├── Feed.js      
+            └── Feed.css      
 
-A full-stack Pinterest-inspired web application where users can upload, discover, like, and save image posts.
 
-Features:
-User Authentication (JWT)
-Upload Image Posts
-Masonry Grid Feed
-Like & Save Posts
-Responsive UI
-REST API Integration
-MongoDB Database
-Tech Stack
-Frontend
-React.js
-React Router
-Axios
-React Masonry CSS
-Backend
-Node.js
-Express.js
-MongoDB
-JWT Authentication
-Multer
-Installation
-Clone Repository
-git clone <your-repo-link>
+ Installation & Setup
+1. Clone the repository
+bashgit clone https://github.com/your-username/pinterest-clone.git
 cd pinterest-clone
-Backend Setup
-cd backend
-npm install
 
-Create .env:
-PORT=5000
+3. Setup the Backend
+bashcd backend
+npm install
+Created a .env file inside the backend/ folder:
+envPORT=5000
 MONGO_URI=mongodb://localhost:27017/pinterest
-JWT_SECRET=your_secret_key
+JWT_SECRET=mysupersecretkey123
+Create the uploads folder:
+bashmkdir uploads
 
-Run backend:
-node server.js
-Frontend Setup
-cd frontend
+4. Setup the Frontend
+bashcd ../frontend
 npm install
+
+ Running the Project
+You need 3 terminals open at the same time:
+Terminal 1 — Start MongoDB
+Windows:
+bash"C:\Program Files\MongoDB\Server\8.3\bin\mongod.exe" --dbpath "C:\data\db"
+Mac:
+bashbrew services start mongodb-community
+Wait until you see:
+waiting for connections on port 27017
+Terminal 2 — Start Backend
+bashcd pinterest-clone/backend
+node server.js
+You should see:
+MongoDB connected
+Server running on port 5000
+Terminal 3 — Start Frontend
+bashcd pinterest-clone/frontend
 npm start
-Folder Structure
-pinterest-clone/
-├── backend/
-├── frontend/
+The app will open at http://localhost:3000
